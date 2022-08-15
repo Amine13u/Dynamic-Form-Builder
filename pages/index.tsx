@@ -3,8 +3,13 @@ import Head from "next/head";
 import { Header } from "../components/Header";
 import { Menu } from "../components/Menu";
 import { FormFields } from "../components/FormFields";
+import { useSelector, useDispatch } from "react-redux";
+import { addFormField, selectForm } from "../slices/formSlice";
 
 const Home: NextPage = () => {
+  const form = useSelector(selectForm);
+  const dispatch = useDispatch();
+
   return (
     <>
       <Head>
