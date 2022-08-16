@@ -5,6 +5,7 @@ import { Menu } from "../components/Menu";
 import { FormFields } from "../components/FormFields";
 import { useSelector, useDispatch } from "react-redux";
 import { addFormField, selectForm } from "../slices/formSlice";
+import { Form } from "../components/Form";
 
 const Home: NextPage = () => {
   const form = useSelector(selectForm);
@@ -18,8 +19,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/*<Header />
-      <Menu />*/}
-      <FormFields />
+      <Menu />
+      <FormFields />*/}
+      <Form form={form} />
     </>
   );
 };
