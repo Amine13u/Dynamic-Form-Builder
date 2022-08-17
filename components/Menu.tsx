@@ -17,10 +17,19 @@ export const Menu: FunctionComponent = () => {
     "Button",
   ];
 
-  const form = useSelector(selectForm);
   const dispatch = useDispatch();
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    dispatch(
+      addFormField({
+        type: "text",
+        name: "",
+        label: "Label",
+        required: false,
+        placeholder: "placeholder",
+      })
+    );
+  };
 
   return (
     <nav className="mt-10 ml-10">

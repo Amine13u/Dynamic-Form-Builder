@@ -8,20 +8,7 @@ export interface FormState {
 }
 
 const initialState: FormState = {
-  formFields: [
-    {
-      type: "text",
-      name: "full-name",
-      id: "1",
-      label: "Full Name",
-    },
-    {
-      type: "text",
-      name: "password",
-      id: "2",
-      label: "Password",
-    },
-  ],
+  formFields: [],
 };
 
 export const formSlice = createSlice({
@@ -31,11 +18,28 @@ export const formSlice = createSlice({
     addFormField: (state, action: PayloadAction<IFormItem>) => {
       state.formFields = [...state.formFields, action.payload];
     },
+    updateFormField: (
+      state,
+      action: PayloadAction<{ updatedField: IFormItem; index: number }>
+    ) => {
+      state.formFields = state.formFields.map((field, i) =>
+        action.payload.index === i ? action.payload.updatedField : field
+      );
+    },
+    deleteFormField: (
+      state,
+      action: PayloadAction<{ field: IFormItem; index: number }>
+    ) => {
+      state.formFields = state.formFields.filter(
+        (field, i) => action.payload.index !== i
+      );
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addFormField } = formSlice.actions;
+export const { addFormField, updateFormField, deleteFormField } =
+  formSlice.actions;
 
 // Form Selector
 export const selectForm = (state: RootState) => state.form.formFields;

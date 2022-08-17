@@ -1,12 +1,28 @@
-import React, { PropsWithChildren } from "react";
-import { FormItem } from "./FormItem";
+import React from "react";
+import { useSelector } from "react-redux";
+import { selectForm } from "../slices/formSlice";
 
-import { IFormProp } from "../types/index";
+export const Form = () => {
+  const form = useSelector(selectForm);
 
-export const Form = (props: IFormProp) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
-    <section className="h-16 bg-slate-400">
-      <form className="w-full max-w-sm bg-slate-300 p-5 drop-shadow-md rounded-2xl"></form>
-    </section>
+    <form onSubmit={handleSubmit}>
+      {form.map((item, i) => (
+        <div key={i} className="h-16 bg-slate-400">
+          <label htmlFor={item.name}>{item.label}</label>
+          <input
+            type={item.type}
+            id={item.name}
+            name={item.name}
+            placeholder={item.placeholder}
+            required={item.required}
+          />
+        </div>
+      ))}
+    </form>
   );
 };
