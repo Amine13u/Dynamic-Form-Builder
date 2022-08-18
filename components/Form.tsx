@@ -35,6 +35,21 @@ export const Form = () => {
                 placeholder={item.placeholder}
                 required={item.required}
               />
+            ) : item.type === "checkbox" || item.type === "radio" ? (
+              <>
+                {item.options?.map((opt, i) => (
+                  <>
+                    <input
+                      type={item.type}
+                      id={opt.option}
+                      value={opt.value}
+                      name={item.name}
+                    />
+                    <label htmlFor={opt.option}>{opt.option}</label>
+                    <br />
+                  </>
+                ))}
+              </>
             ) : (
               <input
                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"

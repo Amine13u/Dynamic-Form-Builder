@@ -61,7 +61,7 @@ export const Menu: FunctionComponent = () => {
       case "Select Input":
         dispatch(
           addFormField({
-            type: "radio",
+            type: "select",
             label: "Label",
             name: "",
             options: [
