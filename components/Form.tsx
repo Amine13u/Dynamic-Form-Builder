@@ -18,7 +18,7 @@ export const Form = () => {
     >
       {form.map((item, i) => (
         <div key={i} className="md:flex md:items-center mb-6">
-          <div key={i} className="md:w-1/3">
+          <div className="md:w-1/3">
             <label
               htmlFor={item.name}
               className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
@@ -38,18 +38,36 @@ export const Form = () => {
             ) : item.type === "checkbox" || item.type === "radio" ? (
               <>
                 {item.options?.map((opt, i) => (
-                  <>
+                  <div key={i} className="flex items-center my-1">
                     <input
+                      className="w-4 h-4 mr-5"
                       type={item.type}
                       id={opt.option}
                       value={opt.value}
                       name={item.name}
                     />
-                    <label htmlFor={opt.option}>{opt.option}</label>
+                    <label
+                      className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                      htmlFor={opt.option}
+                    >
+                      {opt.option}
+                    </label>
                     <br />
-                  </>
+                  </div>
                 ))}
               </>
+            ) : item.type === "select" ? (
+              <select
+                name={item.name}
+                id={item.type}
+                className="bg-gray-200  border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+              >
+                {item.options?.map((opt, i) => (
+                  <option key={i} value={opt.value}>
+                    {opt.option}
+                  </option>
+                ))}
+              </select>
             ) : (
               <input
                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
