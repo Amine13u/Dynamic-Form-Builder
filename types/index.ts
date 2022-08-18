@@ -1,23 +1,18 @@
-interface IOption {
+export interface IOption {
   option: string;
   value: string;
-}
-
-interface IRadio {
-  option: string;
-  value: string;
-  checked: boolean;
+  checked?: boolean;
 }
 
 export interface IFormItem {
+  fieldType?: string;
   type: string;
   id?: string | number;
-  label: string;
+  label?: string;
   placeholder?: string;
   name: string;
   required?: boolean;
   options?: IOption[];
-  radio?: IRadio[];
 }
 
 export interface IFormProp {
