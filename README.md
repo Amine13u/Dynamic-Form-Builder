@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ # Dynamic Form Builder
+
+This project were built with [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/) and the [Redux Toolkit](https://redux-toolkit.js.org/).
+
+## Description
+
+Using this application the user could create, edit and delete a form with various components like : text field, text area, checkbox, radio button and a select input, email, password, date and number.
 
 ## Getting Started
 
-First, run the development server:
+Clone this repository on your local machine.
 
-```bash
-npm run dev
-# or
-yarn dev
+```
+git clone https://github.com/Amine13u/Dynamic-Form-Builder.git
+cd form-builder
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the following commands into the project folder to install project dependencies.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+npm init
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Features
 
-## Learn More
+This project implements form validation using HTML and custom code.
 
-To learn more about Next.js, take a look at the following resources:
+![validation](https://user-images.githubusercontent.com/46264764/185668174-2826ecb3-871a-45cf-9e2c-0348a539d07b.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
