@@ -126,9 +126,12 @@ export const Form = () => {
                       }
                     />
                     <label
-                      className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                      className={`block  font-bold md:text-right mb-1 md:mb-0 pr-4 ${
+                        testForm[item.name]?.error
+                          ? "text-rose-600"
+                          : "text-gray-500"
+                      }`}
                       htmlFor={opt.option}
-                      style={testForm[item.name]?.error ? { color: "red" } : {}}
                     >
                       {opt.option}
                     </label>
@@ -152,12 +155,11 @@ export const Form = () => {
             ) : (
               <input
                 onChange={handleChange}
-                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                style={
+                className={`bg-gray-200 appearance-none rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 ${
                   testForm[item.name] && testForm[item.name].error
-                    ? { border: "2px solid red" }
-                    : {}
-                }
+                    ? "border-2 border-rose-600 "
+                    : "border-2 border-gray-200"
+                }`}
                 type={item.type}
                 id={item.name}
                 name={item.name}
@@ -168,7 +170,6 @@ export const Form = () => {
           </div>
         </div>
       ))}
-
       <div className="md:flex md:items-center">
         <div className="md:w-1/3"></div>
         <div className="md:w-2/3">
