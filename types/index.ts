@@ -18,3 +18,9 @@ export interface IFormItem {
 export interface IFormProp {
   form: Partial<IFormItem>[];
 }
+
+export interface IFormRule {
+  value: string | string[] | null;
+  required: boolean;
+  error: boolean;
+}

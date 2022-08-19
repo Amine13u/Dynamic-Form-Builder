@@ -22,32 +22,35 @@ export const Menu: FunctionComponent = () => {
       case "Text Field":
         dispatch(
           addFormField({
+            fieldType: "Text Field",
             type: "text",
             name: "",
-            label: "Label",
+            label: "Text Field",
             required: false,
-            placeholder: "",
+            placeholder: "Text Field",
           })
         );
         break;
       case "Text Area":
         dispatch(
           addFormField({
-            fieldType: "textarea",
+            fieldType: "Text Area",
             type: "text",
             name: "",
-            label: "Label",
+            label: "Text Area",
             required: false,
-            placeholder: "",
+            placeholder: "Text Area",
           })
         );
         break;
       case "Chekbox":
         dispatch(
           addFormField({
+            fieldType: "Checkbox",
             type: "checkbox",
-            label: "Label",
+            label: "Checkbox",
             name: "",
+            required: false,
             options: [
               {
                 option: "",
@@ -61,9 +64,11 @@ export const Menu: FunctionComponent = () => {
       case "Select Input":
         dispatch(
           addFormField({
+            fieldType: "Select Input",
             type: "select",
-            label: "Label",
+            label: "Select Input",
             name: "",
+            required: false,
             options: [
               {
                 option: "",
@@ -77,9 +82,11 @@ export const Menu: FunctionComponent = () => {
       case "Radio Button":
         dispatch(
           addFormField({
+            fieldType: "Radio Button",
             type: "radio",
-            label: "Label",
+            label: "Radio Button",
             name: "",
+            required: false,
             options: [
               {
                 option: "",
@@ -93,11 +100,12 @@ export const Menu: FunctionComponent = () => {
       case "Email":
         dispatch(
           addFormField({
+            fieldType: "Email",
             type: "email",
             name: "",
-            label: "Label",
+            label: "Email",
             required: false,
-            placeholder: "",
+            placeholder: "johndoe@gmail.com",
           })
         );
         break;
@@ -105,31 +113,33 @@ export const Menu: FunctionComponent = () => {
         dispatch(
           addFormField({
             type: "password",
+            fieldType: "Password",
             name: "",
-            label: "Label",
+            label: "Password",
             required: false,
-            placeholder: "",
+            placeholder: "Password",
           })
         );
         break;
       case "Number":
         dispatch(
           addFormField({
+            fieldType: "Number",
             type: "number",
             name: "",
-            label: "Label",
+            label: "Number",
             required: false,
-            placeholder: "",
+            placeholder: "Number",
           })
         );
         break;
       case "Date":
         dispatch(
           addFormField({
-            fieldType: "date",
+            fieldType: "Date",
             type: "date",
             name: "",
-            label: "Label",
+            label: "Date",
             required: false,
           })
         );

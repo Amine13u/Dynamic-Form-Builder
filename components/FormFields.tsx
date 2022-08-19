@@ -22,7 +22,7 @@ export const FormFields: FunctionComponent = () => {
   ) => {
     const updatedOption = {
       ...opt,
-      [`${e.target.id}`]: `${e.target.value}`,
+      [e.target.id]: e.target.value,
     };
     dispatch(
       updateOption({
@@ -130,7 +130,6 @@ export const FormFields: FunctionComponent = () => {
               />
             </div>
           </div>
-
           {["select", "checkbox", "radio"].includes(item.type) &&
             item.options!.map((opt, optIndex) => (
               <div key={optIndex} className="md:flex md:items-center mb-6">
@@ -191,28 +190,24 @@ export const FormFields: FunctionComponent = () => {
                 </div>
               </div>
             ))}
-
-          {!["select", "checkbox", "radio"].includes(item.type) && (
-            <div className="md:flex md:items-center mb-6">
-              <div className="md:w-1/3"></div>
-              <label className="md:w-2/3 block text-gray-500 font-bold">
-                <input
-                  className="mr-2 leading-tight"
-                  type="checkbox"
-                  onChange={(e) => {
-                    dispatch(
-                      updateFormField({
-                        updatedField: { ...item, required: e.target.checked },
-                        index: i,
-                      })
-                    );
-                  }}
-                />
-                <span className="text-sm">Required</span>
-              </label>
-            </div>
-          )}
-
+          <div className="md:flex md:items-center mb-6">
+            <div className="md:w-1/3"></div>
+            <label className="md:w-2/3 block text-gray-500 font-bold">
+              <input
+                className="mr-2 leading-tight"
+                type="checkbox"
+                onChange={(e) => {
+                  dispatch(
+                    updateFormField({
+                      updatedField: { ...item, required: e.target.checked },
+                      index: i,
+                    })
+                  );
+                }}
+              />
+              <span className="text-sm">Required</span>
+            </label>
+          </div>
           <div className="md:flex md:items-center">
             <div className="md:w-1/3"></div>
             <div className="md:w-2/3">
